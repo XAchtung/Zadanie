@@ -1,0 +1,51 @@
+<html>
+<head>
+<title>
+ Przykład pole i obwod prostokata
+</title>
+ <script language="JavaScript">
+function pole_berg(a_ber, b_ber)
+{
+ a_dana_ber=parseFloat(a_ber)
+ b_dana_ber=parseFloat(b_ber)
+ Pole=a_dana_ber*b_dana_ber
+ document.getElementsByName('pole')[0].value=Pole.toFixed(2); /* na dokument */
+ alert("Pole="+Pole.toFixed(2)+" cm^2"); /*do okna Alert */
+ wprowadz_pole_ber.innerHTML="Pole="+Pole.toFixed(2)+" cm^2"+"<br>"; /* do tabeli */
+}
+function obowod_berg(a_ber,b_ber)
+{
+ a_dana_ber=parseFloat(a_ber)
+ b_dana_ber=parseFloat(b_ber)
+ Obwod=a_dana_ber+a_dana_ber+b_dana_ber+b_dana_ber
+ document.getElementsByName('obwod')[0].value=Obwod.toFixed(2);
+ alert("Obwod="+Obwod.toFixed(2)+" cm");
+ wprowadz_obwod_ber.innerHTML="Obwod="+Obwod.toFixed(2)+"cm";
+}
+ </script>
+ </head>
+ <body>
+ Liczenie pola i obwodu prostokata
+ <br> <br>
+ <form name="formularz" action="..." onsubmit="pole_berg(this.promien.value,this.wysokosc.value);
+ obowod_berg(this.promien.value,this.wysokosc.value);return false">
+ Podaj a=
+ <input size="6" name="promien">
+ Podaj b=
+ <input size="6" name="wysokosc">
+ <br>
+ <br>
+ <input TYPE="submit" Value="oblicz" >
+ <br>
+ <br>
+ Pole=
+ <input size="6" name="pole">
+ Obwod=
+ <input size="6" name="obwod">
+ </form>
+ <table>
+ <tr id="wprowadz_pole_ber"></tr>
+ <tr id="wprowadz_obwod_ber"></tr>
+ </table>
+ </body>
+ </html>

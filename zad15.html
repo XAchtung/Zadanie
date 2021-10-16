@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zadanie 15</title>
+    <script type="text/javascript">
+    var in_x1_ber = prompt("podaj liczbe x1:", "liczba1");
+    var in_x2_ber = prompt("podaj liczbe x2:", "liczba2");
+
+    var x1 = parseFloat(in_x1_ber);
+    var x2 = parseFloat(in_x2_ber);
+
+    var y1 = 3 * Math.pow(x1, (6/(6+2)));
+    var y2 = (2 * Math.cos(x1 * Math.PI / 180)) + (2 * Math.sin(x1 * Math.PI / 180));
+    var y3 = Math.cbrt(Math.pow(x1,5)+(2 * Math.pow(x2, 4)));
+    var y4 = Math.abs(x1 - x2);
+    var y5 = y3 * y4;
+
+    document.write("X1="+x1 + "<br>" + "X2="+x2 + "<br>" + "Y3="+y1.toFixed(2) + "<br>" + "Y4="+y2.toFixed(4) + "<br>" + "Y5="+y3.toFixed(4) + "<br>"  );
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kod</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Promień koła R</td>
+            <td>Liczba punktów kratowych N(R)</td>
+        </tr>
+        <tr>
+            <td>2,01</td>
+            <td>13</td>
+        </tr>
+        <tr>
+            <td>4,50</td>
+            <td>49</td>
+        </tr>
+        <tr>
+            <td>100+numer_w_dzienniku</td>
+            <td>33317</td>
+        </tr>
+        <tr>
+            <td>1000+numer_w_dzienniku</td>
+            <td>???</td>
+        </tr>
+    </table>
+    <textarea name="" id="" cols="150" rows="50">
+        <!-- Punkty kratowe -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Punkty kratowe</title>
+</head>
+<body>
+    <script>
+        let liczba1 = prompt("Podaj R=","")
+        let R = parseFloat(liczba1)
+        let licznik_ber = 0
+
+        for(let i = -Math.round(R)-1; i <= Math.round(R)+1; i++){
+            for(let j = -Math.round(R)-1; j <= Math.round(R)+1; j++){
+                d=Math.sqrt(i*i+j*j)
+                document.write("("+i+" , "+j+")"+"   ");
+                if(d<=R){licznik_ber++}
+            }
+            document.write("<br>")
+        }
+        document.write("licznik="+licznik_ber+"<br>")
+    </script>
+</body>
+</html>
+    </textarea>
+</body>
+</html>

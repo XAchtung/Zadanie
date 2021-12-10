@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funkcja kwadratowa</title>
+    <style>
+        *{
+            font-size: 1cm;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let a_ber = prompt("Podaj a");
+        let b_ber = prompt("Podaj b");
+        let c_ber = prompt("Podaj c");
+
+        a_ber = parseFloat(a_ber);
+        b_ber = parseFloat(b_ber);
+        c_ber = parseFloat(c_ber);
+
+        if(a_ber != 0){
+        if(b_ber > 0 && c_ber > 0){
+            document.write("Postac ogolna: " + a_ber+"x^2 +" + b_ber+ "x +" + c_ber+"<br>");
+        }else if(b_ber < 0 && c_ber > 0){
+            document.write("Postac ogolna: " + a_ber+"x^2" + b_ber+ "x +" + c_ber+"<br>");
+        }else if(b_ber > 0 && c_ber < 0){
+            document.write("Postac ogolna: " + a_ber+"x^2+" + b_ber+ "x " + c_ber+"<br>");
+        }else if(b_ber < 0 && c_ber < 0){
+            document.write("Postac ogolna: " + a_ber+"x^2" + b_ber+ "x " + c_ber+"<br>");
+        }
+
+        let delta_ber = (Math.pow(b_ber, 2)-(4*a_ber*c_ber));
+        let p_ber = (-b_ber/(2*a_ber));
+        let q_ber = (-delta_ber/(4*a_ber));
+
+        document.write("P="+ p_ber.toFixed(2) + "<br>");
+        document.write("Q="+ q_ber.toFixed(2) + "<br>");
+        document.write("W= ("+p_ber.toFixed(2)+","+q_ber.toFixed(2)+")<br>")
+
+        if(p_ber >= 0 && q_ber <= 0){
+            document.write("Postać kanoniczna: \n " + a_ber + "(x -"+p_ber.toFixed(2)+")^2"+q_ber.toFixed(2)+"<br>");
+        }else if(p_ber >= 0 && q_ber >= 0){
+            document.write("Postać kanoniczna: \n " + a_ber + "(x -"+p_ber.toFixed(2)+")^2+"+q_ber.toFixed(2)+"<br>");
+        }
+        else if(p_ber <= 0 && q_ber <= 0){
+            document.write("Postać kanoniczna: \n " + a_ber + "(x "+p_ber.toFixed(2)+")^2"+q_ber.toFixed(2)+"<br>");
+        }
+        else if(p_ber <= 0 && q_ber >= 0){
+            document.write("Postać kanoniczna: \n " + a_ber + "(x "+p_ber.toFixed(2)+")^2+"+q_ber.toFixed(2)+"<br>");
+        }
+
+        if(delta_ber > 0){
+            let x1_ber = ((-b_ber-Math.sqrt(delta_ber))/(2*a_ber));
+            let x2_ber = ((-b_ber+Math.sqrt(delta_ber))/(2*a_ber));
+
+            if(x1_ber < 0 && x2_ber < 0 ){
+                document.write("Postać iloczynowa: "+a_ber+"(x"+x1_ber.toFixed(2)+")(x"+x2_ber.toFixed(2)+")")
+            }else if(x1_ber < 0 && x2_ber > 0){
+                document.write("Postać iloczynowa: "+a_ber+"(x"+x1_ber.toFixed(2)+")(x+"+x2_ber.toFixed(2)+")")
+            }else if(x1_ber > 0 && x2_ber > 0){
+                document.write("Postać iloczynowa: "+a_ber+"(x+"+x1_ber.toFixed(2)+")(x+"+x2_ber.toFixed(2)+")")
+            }else if(x1_ber > 0 && x2_ber < 0){
+                document.write("Postać iloczynowa: "+a_ber+"(x+"+x1_ber.toFixed(2)+")(x"+x2_ber.toFixed(2)+")")
+            }else if(x1_ber == 0 && x2_ber == 0){
+                document.write("Postać iloczynowa: "+a_ber+"x^2")
+            }
+            
+        }else if(delta_ber == 0){
+            let x0_ber = (-b_ber/(2*a_ber));
+            if(x0_ber > 0){
+                document.write("Postać iloczynowa: "+a_ber+"(x+"+x0_ber.toFixed(2)+")^2")
+            }else if(x0_ber < 0){
+                document.write("Postać iloczynowa: "+a_ber+"(x"+x0_ber.toFixed(2)+")^2")
+            }else if(x0_ber == 0){
+                document.write("Postać iloczynowa: "+a_ber+"x^2")
+            }
+        }else if(delta_ber < 0){
+            document.write("Brak postaci iloczynowej. delta < 0");
+        }
+    }else{
+        document.write("Parametr a == 0");
+    }
+    </script>
+</body>
+</html>
